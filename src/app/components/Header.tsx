@@ -1,16 +1,17 @@
 "use client"; // Asegúrate de que este componente sea un "client component"
 
 import Link from "next/link";
-import { useState } from "react";
 import ThemeToggle from "./ThemeToggle"; // Importar el toggle
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <header className="bg-gray-200 text-black dark:bg-gray-900 dark:text-white border-b-2 border-gray-900 dark:border-gray-200">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -21,23 +22,30 @@ export default function Header() {
         >
           MiTienda
         </Link>
-        <div className="sm:hidden ">
+        <div className="md:hidden ">
           <ThemeToggle />
         </div>
         {/* Botón de menú hamburguesa para pantallas pequeñas */}
-        <button
-          className="dark:text-white block md:hidden text-black dark:hover:text-gray-300 hover:text-gray-500"
-          onClick={toggleMenu}
-        >
-          ☰
-        </button>
 
+        <Sheet>
+          <SheetTrigger className="dark:text-white block md:hidden text-black dark:hover:text-gray-300 hover:text-gray-500">
+            ☰
+          </SheetTrigger>
+
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>Are you absolutely sure?</SheetTitle>
+              <SheetDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
         {/* Enlaces de navegación */}
 
         <nav
-          className={`${
-            isOpen ? "block" : "hidden"
-          } w-full md:flex md:items-center md:w-auto space-y-4 md:space-y-0 md:space-x-6`}
+          className={`hidden w-full md:flex md:items-center md:w-auto space-y-4 md:space-y-0 md:space-x-6`}
         >
           <Link
             href="/products"
