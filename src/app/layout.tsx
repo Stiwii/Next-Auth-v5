@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { balooTamma2 } from "./fonts/fonts";
-import Header from "./components/Header";
+import { balooTamma2 } from "../fonts/fonts";
+import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: "SSS",
