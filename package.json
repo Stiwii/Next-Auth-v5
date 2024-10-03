@@ -17,6 +17,7 @@
     "lucide-react": "^0.447.0",
     "my-app": "file:",
     "next": "14.2.14",
+    "next-auth": "^5.0.0-beta.22",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.2",
