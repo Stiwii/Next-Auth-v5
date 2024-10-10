@@ -1,7 +1,7 @@
 "use client"; // Asegúrate de que este componente sea un "client component"
 
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle"; // Importar el toggle
+import ThemeToggle from "@/components/ThemeToggle"; // Importar el toggle
 import {
   Sheet,
   SheetContent,

@@ -32,7 +32,7 @@ export default function ThemeToggle() {
           className={`w-12 h-6 rounded-full transition-colors duration-200 ease-in-out bg-transparent ${
             theme === "dark"
               ? "border-2 border-gray-200"
-              : "border-2 border-gray-900 "
+              : "border-2 border-gray-900 bg-white"
           }`}
         >
           <div

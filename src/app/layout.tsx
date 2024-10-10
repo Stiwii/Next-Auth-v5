@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { balooTamma2 } from "../fonts/fonts";
-import Header from "../components/Header";
 
 export const metadata: Metadata = {
   title: "SSS",
@@ -16,9 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${balooTamma2.variable} antialiased max-w-7xl m-auto bg-gray-300 text-black dark:bg-black dark:text-white `}
+        className={`${balooTamma2.variable} antialiased max-w-7xl m-auto text-black  dark:text-white bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)] dark:bg-[radial-gradient(circle_at_bottom_right,_#001e3f_30%,_transparent_80%)]`}
       >
-        <Header />
         {children}
       </body>
     </html>
