@@ -9,7 +9,6 @@ interface LoginButtonProps {
 export default function LoginButton({
   children,
   mode,
-  asChild,
 }: Readonly<LoginButtonProps>) {
   const router = useRouter();
   const onClick = () => {
