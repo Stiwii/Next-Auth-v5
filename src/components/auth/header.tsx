@@ -6,7 +6,7 @@ const Header = ({ label }: Readonly<HeaderProps>) => {
   return (
     <div className=" w-full flex flex-col gap-y-4 items-center justify-center">
       <h1 className="text-3xl font-semibold"> 🔐Auth</h1>
-      <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+      <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
         {label}
       </p>
     </div>
