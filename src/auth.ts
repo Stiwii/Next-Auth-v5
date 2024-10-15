@@ -28,6 +28,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       if (!existingUser?.emailVerified) return false;
 
       //TODO: add 2FA check
+      return true;
     },
     async session({ session, token }) {
       if (token.sub && session.user) {

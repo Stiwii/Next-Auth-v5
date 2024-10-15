@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 import CardWrapper from "@/components/auth/card-wrapper";
 import {
@@ -101,7 +102,7 @@ const LoginForm = () => {
                       <Input
                         disabled={isPending}
                         {...field}
-                        placeholder="********"
+                        placeholder="******"
                         type={showPassword ? "text" : "password"}
                       />
 
@@ -113,6 +114,9 @@ const LoginForm = () => {
                       </p>
                     </div>
                   </FormControl>
+                  <Button size={"sm"} variant={"link"} asChild className="px-0">
+                    <Link href={"/auth/reset"}> Forgot Password? </Link>
+                  </Button>
                   <FormMessage />
                 </FormItem>
               )}
