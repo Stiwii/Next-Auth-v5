@@ -17,7 +17,7 @@ import { LogoutButton } from "@/components/auth/logout-button";
 
 export function UserButton() {
   const user = useCurrentUser();
-  console.log({ user });
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -34,6 +34,7 @@ export function UserButton() {
             <ExitIcon className="mr-2 h-4 w-4" />
             Logout
           </DropdownMenuItem>
+          <DropdownMenuItem></DropdownMenuItem>
         </LogoutButton>
       </DropdownMenuContent>
     </DropdownMenu>
