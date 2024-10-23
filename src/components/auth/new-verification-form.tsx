@@ -15,7 +15,7 @@ export default function NewVerificationForm() {
 
   const searchParams = useSearchParams();
 
-  const token = searchParams.get("token");
+  const token = searchParams ? searchParams.get("token") : null;
 
   const onSubmit = useCallback(() => {
     if (success || error) return;

@@ -4,6 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 
 import { balooTamma2 } from "@/fonts/fonts";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Auth",
@@ -20,8 +21,9 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body
-          className={`${balooTamma2.variable} antialiased max-w-7xl m-auto  dark:bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)] bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)]`}
+          className={`${balooTamma2.variable} antialiased  w-full h-full  dark:bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)] bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)]`}
         >
+          <Toaster />
           {children}
         </body>
       </html>

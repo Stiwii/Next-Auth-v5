@@ -10,7 +10,7 @@ import {
   generateVerificationToken,
 } from "@/lib/tokens";
 import { getUserByEmail } from "@/data/user";
-import { sendVericationEmail, sendTwoFactorEmail } from "@/lib/mail";
+import { sendVerificationEmail, sendTwoFactorEmail } from "@/lib/mail";
 import { getTwoFactorTokenbyEmail } from "@/data/two-factor-token";
 import { db } from "@/lib/db";
 import { getTwoFactorConfirmationbyUserId } from "@/data/two-factor-confirmation";
@@ -32,7 +32,10 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     const verificationToken = await generateVerificationToken(
       exisingUser.email
     );
-    await sendVericationEmail(verificationToken.email, verificationToken.token);
+    await sendVerificationEmail(
+      verificationToken.email,
+      verificationToken.token
+    );
     return { success: "Verification email sent!" };
   }
 

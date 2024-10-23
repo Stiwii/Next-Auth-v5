@@ -1,7 +1,7 @@
 import { ExtendedUser } from "@/next-auth";
 
 interface UserInfoProps {
-  user?: ExtendedUser;
+  user?: ExtendedUser | null;
   label: string;
 }
 
