@@ -3,7 +3,7 @@
 import * as Z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState, useTransition } from "react";
+import { use, useEffect, useState, useTransition } from "react";
 import { useSession } from "next-auth/react";
 
 import {
@@ -40,18 +40,18 @@ const SettingsPage = () => {
   const [error, setError] = useState<string | null | undefined>();
   const [success, setSuccess] = useState<string | null | undefined>();
 
-  const { update } = useSession();
+  const { update } = useSession({ required: true });
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<Z.infer<typeof SettingsSchema>>({
     resolver: zodResolver(SettingsSchema),
     defaultValues: {
-      name: user?.name || undefined,
-      email: user?.email || undefined,
+      name: user?.name ?? undefined,
+      email: user?.email ?? undefined,
       password: undefined,
       newPassword: undefined,
-      role: user?.role || undefined,
-      isTwoFactorEnabled: user?.isTwoFactorEnabled || undefined,
+      role: user?.role ?? undefined,
+      isTwoFactorEnabled: user?.isTwoFactorEnabled ?? undefined,
     },
     mode: "onChange",
   });

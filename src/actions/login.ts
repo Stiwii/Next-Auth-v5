@@ -79,7 +79,7 @@ export const login = async (
       });
     } else {
       const twoFactorToken = await generateTwoFactorToken(exisingUser.email);
-      console.log({ twoFactorToken });
+      // console.log({ twoFactorToken });
       await sendTwoFactorEmail(twoFactorToken.email, twoFactorToken.token);
       return { twoFactor: true };
     }

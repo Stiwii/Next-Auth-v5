@@ -12,7 +12,7 @@ const newPassword = async (
   values: z.infer<typeof NewPasswordSchema>,
   token?: string | null
 ) => {
-  console.log(token);
+  // console.log(token);
 
   if (!token) {
     return {
