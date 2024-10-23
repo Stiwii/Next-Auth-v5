@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center h-full ">
+    <main className="flex h-full flex-col items-center justify-center  ">
       <ThemeToggle />
       <div className="space-y-4 text-center">
-        <h1 className="text-4xl fontbold"> 🔐AUTH</h1>
+        <h1 className="text-6xl fontbold drop-shadow-md"> 🔐AUTH</h1>
         <p className="text-lg">A simple authentication</p>
         <div>
           <LoginButton asChild>
