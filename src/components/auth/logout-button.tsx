@@ -8,7 +8,7 @@ interface LogoutButtonProps {
 }
 
 export function LogoutButton({ children }: Readonly<LogoutButtonProps>) {
-  const [isPeding, startTransition] = useTransition();
+  const [isPending, startTransition] = useTransition();
 
   const onClick = () => {
     startTransition(() => {
@@ -20,7 +20,7 @@ export function LogoutButton({ children }: Readonly<LogoutButtonProps>) {
 
   return (
     <span onClick={onClick} className="cursor-pointer">
-      {children}
+      {isPending ? <span>Logging out...</span> : children}
     </span>
   );
 }
