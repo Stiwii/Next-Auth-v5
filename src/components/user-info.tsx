@@ -8,7 +8,7 @@ interface UserInfoProps {
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-export default function UserInfo({ user, label }: UserInfoProps) {
+export default function UserInfo({ user, label }: Readonly<UserInfoProps>) {
   return (
     <Card className="max-w-[600px] w-full shadow-md ">
       <CardHeader>

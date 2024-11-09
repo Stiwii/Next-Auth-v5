@@ -15,11 +15,14 @@ import { getTwoFactorTokenbyEmail } from "@/data/two-factor-token";
 import { db } from "@/lib/db";
 import { getTwoFactorConfirmationbyUserId } from "@/data/two-factor-confirmation";
 
-export const login = async (
-  values: z.infer<typeof LoginSchema>,
-  callbackUrl?: string | null
-) => {
+interface LoginProps {
+  values: z.infer<typeof LoginSchema>;
+  callbackUrl?: string | null;
+}
+
+export const login = async ({ values, callbackUrl }: LoginProps) => {
   const validateFields = LoginSchema.safeParse(values);
+  console.log({ validateFields });
   if (!validateFields.success) {
     return { error: "Invalid fields" };
   }
