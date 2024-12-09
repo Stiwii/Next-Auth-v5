@@ -21,7 +21,7 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <body
-          className={`${balooTamma2.variable} antialiased  w-full h-full min-h-screen dark:bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)] bg-[radial-gradient(circle_at_bottom_right,_#001e3f_10%,_transparent_80%)] overflow-y-auto`}
+          className={`${balooTamma2.variable} antialiased   w-full min-h-screen max-h-max  overflow-auto `}
         >
           <Toaster />
           {children}

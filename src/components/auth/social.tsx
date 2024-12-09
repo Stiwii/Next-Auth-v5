@@ -15,7 +15,7 @@ export default function Social() {
   const onClick = (provider: "google" | "github") => {
     signIn(provider, { callbackUrl: callbackUrl ?? DEFAULT_LOGIN_REDIRECT });
   };
-  return (
+  return ( 
     <div className="flex items-center  gap-x-2 w-full">
       <Button
         size={"lg"}
